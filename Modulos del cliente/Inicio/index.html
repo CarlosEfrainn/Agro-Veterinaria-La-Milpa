@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio | Agro Veterinaria La Milpa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* =============================================
+       VARIABLES GLOBALES DE COLOR Y TIPOGRAFIA
+       ============================================= */
+    :root {
+      --verde-oscuro: #1a4a2e;
+      --verde-medio: #2d7a4f;
+      --verde-claro: #4caf7d;
+      --crema:       #f5f0e8;
+      --tierra:      #8b5e3c;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--crema);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- =============================================
+       MODULO 1: BARRA DE NAVEGACION
+       Muestra el nombre del negocio y los enlaces
+       a las secciones principales del sitio.
+       ============================================= -->
+  <nav class="bg-[#1a4a2e] text-white px-8 py-4 flex items-center justify-between">
+
+    <!-- Nombre del negocio -->
+    <span class="text-xl font-bold tracking-wide" style="font-family:'Playfair Display',serif;">
+      🌿 La Milpa Santa Elena
+    </span>
+
+    <!-- Enlaces de navegacion -->
+    <ul class="flex gap-8 text-sm font-medium">
+      <li><a href="01-inicio.html"        class="border-b-2 border-[#4caf7d] pb-1">Inicio</a></li>
+      <li><a href="02-catalogo.html"      class="hover:text-[#4caf7d] transition">Catálogo</a></li>
+      <li><a href="03-domicilio.html"     class="hover:text-[#4caf7d] transition">Domicilio</a></li>
+      <li><a href="04-contacto.html"      class="hover:text-[#4caf7d] transition">Contacto</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =============================================
+       MODULO 2: SECCION HERO (PRESENTACION)
+       Primera seccion que ve el cliente al entrar.
+       Muestra el nombre del negocio y una llamada
+       a la accion principal.
+       ============================================= -->
+  <section class="bg-[#1a4a2e] text-white px-8 py-24 text-center">
+
+    <p class="text-[#4caf7d] text-sm uppercase tracking-widest mb-3">Agro Veterinaria</p>
+
+    <h1 class="text-5xl mb-6 leading-tight">
+      La Milpa <br/> Santa Elena
+    </h1>
+
+    <p class="text-gray-300 max-w-xl mx-auto mb-8 text-lg">
+      Productos agroveterinarios de calidad para el campo y tus animales.
+      Ahora con servicio a domicilio.
+    </p>
+
+    <!-- Botones de accion -->
+    <div class="flex gap-4 justify-center">
+      <a href="02-catalogo.html" class="bg-[#4caf7d] hover:bg-[#2d7a4f] text-white px-6 py-3 rounded-lg font-semibold transition">
+        Ver Productos
+      </a>
+      <a href="03-domicilio.html" class="border border-white hover:bg-white hover:text-[#1a4a2e] text-white px-6 py-3 rounded-lg font-semibold transition">
+        Pedir a Domicilio
+      </a>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       MODULO 3: TARJETAS DE SERVICIOS
+       Resumen visual de lo que ofrece el negocio.
+       Cada tarjeta representa un servicio clave.
+       ============================================= -->
+  <section class="px-8 py-16 max-w-5xl mx-auto">
+
+    <h2 class="text-3xl text-center text-[#1a4a2e] mb-10">¿Que ofrecemos?</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Tarjeta 1: Productos -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+        <div class="text-4xl mb-4">🌾</div>
+        <h3 class="text-xl text-[#1a4a2e] mb-2">Catalogo de Productos</h3>
+        <p class="text-gray-500 text-sm">Encuentra todo lo que necesitas para el campo y tus animales en un solo lugar.</p>
+      </div>
+
+      <!-- Tarjeta 2: Domicilio -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+        <div class="text-4xl mb-4">🚚</div>
+        <h3 class="text-xl text-[#1a4a2e] mb-2">Servicio a Domicilio</h3>
+        <p class="text-gray-500 text-sm">Recibe tus pedidos directamente en tu hogar con solo llenar un formulario.</p>
+      </div>
+
+      <!-- Tarjeta 3: Contacto -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+        <div class="text-4xl mb-4">📞</div>
+        <h3 class="text-xl text-[#1a4a2e] mb-2">Contacto Directo</h3>
+        <p class="text-gray-500 text-sm">Llamanos en cualquier momento, nuestros telefonos siempre estan disponibles.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       MODULO 4: PIE DE PAGINA
+       Informacion basica del negocio que se
+       repite en todas las paginas.
+       ============================================= -->
+  <footer class="bg-[#1a4a2e] text-gray-300 text-center py-6 text-sm">
+    <p>© 2026 Agro Veterinaria La Milpa Santa Elena — Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>

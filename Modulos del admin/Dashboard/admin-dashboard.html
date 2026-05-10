@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Agro Veterinaria La Milpa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        verde: {
+                            oscuro: '#1a4a2e',
+                            medio:  '#2d7a4f',
+                            claro:  '#4caf7d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body class="bg-gray-50 font-sans min-h-screen">
+    <nav class="fixed top-0 left-0 right-0 z-10 bg-verde-oscuro text-white px-6 py-4 flex items-center justify-between shadow-lg"">
+
+        <div class="flex items-center gap-3">
+        <img src="../../Imagenes/Logo.jpeg" 
+        alt="Logo Agro Veterinaria La Milpa" 
+        class="w-10 h-10 object-contain rounded-full"/>
+
+        <div>
+            <p class="font-bold text-sm leading-tight">
+                Panel de Administracion
+            </p>
+            <p class="text-verde-claro text-xs">
+                Agro Veterinaria La Milpa
+            </p>
+        </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-gray-300 text-sm hidden sm:block">
+                Hola, Admin
+            </span>
+            <a href="../Login/admin-login.html" class="bg-white text-verde-oscuro text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition duration-200">
+                Cerrar Sesión
+            </a>
+        </div>
+    </nav>
+
+    <div class="flex pt-16">
+        <aside class="fixed top-16 left-0 h-screen w-56 bg-white border-r border-gray-100 py-6 px-3">
+            <ul class="space-y-1 text-sm">
+                <li>
+                    <a href="admin-dashboard.html" 
+                    data-menu="dashboard" 
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../Gestion de productos/admin-productos.html" data-menu="productos" 
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                        Gestion de Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../Solicitudes/admin-solicitudes.html"
+                    data-menu="solicitudes"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                    Solicitudes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../Informacion del negocio/admin-info-negocio.html"
+                    data-menu="informacion"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                    Información del Negocio
+                </a>
+                </li>
+
+            </ul>
+        </aside>
+        <main class="ml-56 flex-1 p-8">
+            <h2 class="text-2xl font-bold text-verde-oscuro mb-8">Resumen del sistema</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-gray-400 text-sm flex items-center gap-2">
+                            <img src="../../Iconos/producto-organico.png" alt="Icono total de productos" class="w-5 h-5"/>
+                            Total de productos
+                        </p>
+                    </div>
+                    <p class="text-3xl font-bold text-verde-oscuro mb-2" id="totalProductos">0</p>
+                    <p class="text-verde-claro text-xs mt-2">En el catalogo</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-gray-400 text-sm flex items-center gap-2">
+                            <img src="../../Iconos/solicitudPendiente.png" alt="Icono solicitudes pendientes" class="w-5 h-5"/>
+                            Solicitudes pendientes
+                        </p>
+                    </div>
+                    <p class="text-3xl font-bold text-verde-oscuro mb-2" id="solicitudesPendientes">0</p>
+                    <p class="text-verde-claro text-xs mt-2">Por atender</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-gray-400 text-sm">Solicitudes atendidas</p>
+                        <span class="text-2xl font-bold">✅</span>
+                    </div>
+                    <p class="text-3xl font-bold text-verde-oscuro mb-2" id="solicitudesAtendidas">0</p>
+                    <p class="text-verde-claro text-xs mt-2">Completadas</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-semibold text-verde-oscuro mb-4">Accesos rapidos</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+                <a href="../Gestion de productos/admin-productos.html"
+                class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100
+                hover:border-verde-claro hover:shadow-md transition duration-200 text-center">
+                    <img src="../../Iconos/producto-organico.png" alt="Icono gestion de productos" class="w-8 h-8 mx-auto mb-3"/>
+                    <p class="text-sm font-medium text-verde-oscuro group-hover:text-verde-claro transition duration-200">
+                        Gestion de Productos
+                    </p>
+                    <p class="text-gray-400 text-xs mt-1">Agregar, modificar o eliminar productos</p>
+            </a>
+
+            <a href="../Solicitudes/admin-solicitudes.html"
+            class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100
+                hover:border-verde-claro hover:shadow-md transition duration-200 text-center">
+                    <img src="../../Iconos/enviado.png" alt="Icono solicitudes pendientes" class="w-8 h-8 mx-auto mb-3"/>
+                    <p class="text-sm font-medium text-verde-oscuro group-hover:text-verde-claro transition duration-200">
+                        Solicitudes
+                    </p>
+                    <p class="text-gray-400 text-xs mt-1">Revisar y atender solicitudes de clientes</p>
+            </a>
+
+            <a href="../Informacion del negocio/admin-info-negocio.html"
+            class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100
+                hover:border-verde-claro hover:shadow-md transition duration-200 text-center">
+                    <img src="../../Iconos/gestionDeInfo.png" alt="Icono informacion del negocio" class="w-8 h-8 mx-auto mb-3"/>
+                    <p class="text-sm font-medium text-verde-oscuro group-hover:text-verde-claro transition duration-200">
+                        Informacion del negocio
+                    </p>
+                    <p class="text-gray-400 text-xs mt-1">Gestionar informacion general del negocio</p>
+            </a>
+
+            </div>
+        </main>
+    </div>
+    <script src="scriptDashboard.js"></script>
+</body>
+</html>
