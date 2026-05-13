@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Agro Veterinaria La Milpa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        verde: {
+                            oscuro: '#1a4a2e',
+                            medio:  '#2d7a4f',
+                            claro:  '#4caf7d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body class="bg-gray-50 font-sans min-h-screen">
+
+    <nav class="fixed top-0 left-0 right-0 z-10 bg-verde-oscuro text-white px-6 py-4 flex items-center justify-between shadow-lg">
+
+        <div class="flex items-center gap-3">
+            <img src="../../Imagenes/Logo.jpeg"
+            alt="Logo Agro Veterinaria La Milpa"
+            class="w-10 h-10 object-contain rounded-full"/>
+
+            <div>
+                <p class="font-bold text-sm leading-tight">
+                    Panel de Administracion
+                </p>
+                <p class="text-verde-claro text-xs">
+                    Agro Veterinaria La Milpa
+                </p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <span class="text-gray-300 text-sm hidden sm:block">
+                Hola, Admin
+            </span>
+            <a href="../Login/admin-login.html" class="bg-white text-verde-oscuro text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition duration-200">
+                Cerrar Sesión
+            </a>
+        </div>
+
+    </nav>
+
+    <div class="flex pt-16">
+
+        <aside class="fixed top-16 left-0 h-screen w-56 bg-white border-r border-gray-100 py-6 px-3">
+            <ul class="space-y-1 text-sm">
+
+                <li>
+                    <a href="../Dashboard/admin-dashboard.html"
+                    data-menu="dashboard"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                        <img src="../../Iconos/Dashboard.png" alt="Icono Dashboard" class="w-5 h-5"/>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin-productos.html"
+                    data-menu="productos"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                        <img src="../../Iconos/GestionDeProductos.png" alt="Icono Gestion de Productos" class="w-5 h-5"/>
+                        Gestion de Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../Solicitudes/admin-solicitudes.html"
+                    data-menu="solicitudes"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                        <img src="../../Iconos/solicitud.png" alt="Icono Solicitudes" class="w-5 h-5"/>
+                        Solicitudes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../Informacion del negocio/admin-info-negocio.html"
+                    data-menu="informacion"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 hover:bg-verde-medio hover:text-white hover:scale-105 hover:shadow-md">
+                        <img src="../../Iconos/gestionDeInfo.png" alt="Icono Información del Negocio" class="w-5 h-5"/>
+                        Información del Negocio
+                    </a>
+                </li>
+
+            </ul>
+        </aside>
+
+        <main class="ml-56 flex-1 p-8">
+
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-verde-oscuro">Gestion de Productos</h2>
+                    <p class="text-gray-400 text-sm mt-1">
+                        Total registrados: <span id="contador-total" class="font-semibold text-verde-oscuro">0</span>
+                    </p>
+                </div>
+                <button
+                    onclick="mostrarFormulario('nuevo')"
+                    class="bg-verde-oscuro hover:bg-verde-medio text-white text-sm font-semibold px-5 py-2 rounded-xl transition duration-200">
+                    + Agregar Producto
+                </button>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-x-auto mb-8">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-50 border-b border-gray-100">
+                        <tr>
+                            <th class="text-left px-6 py-4 text-gray-400 font-medium">Imagen</th>
+                            <th class="text-left px-6 py-4 text-gray-400 font-medium">Nombre</th>
+                            <th class="text-left px-6 py-4 text-gray-400 font-medium">Descripcion</th>
+                            <th class="text-left px-6 py-4 text-gray-400 font-medium">Precio</th>
+                            <th class="text-left px-6 py-4 text-gray-400 font-medium">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla" class="divide-y divide-gray-50">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- FORMULARIO AGREGAR / EDITAR -->
+            <div id="formulario-producto" class="hidden bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-2xl">
+
+                <h3 id="titulo-formulario" class="text-xl font-bold text-verde-oscuro mb-6">
+                    Agregar Producto
+                </h3>
+
+                <div class="space-y-5">
+
+                    <!-- Campo: Nombre -->
+                    <div class="flex flex-col gap-1">
+                        <label class="text-sm font-medium text-gray-700">Nombre del producto</label>
+                        <input
+                            id="input-nombre"
+                            type="text"
+                            placeholder="Ej. Concentrado para Pollos"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
+                                focus:outline-none focus:ring-2 focus:ring-verde-claro focus:border-transparent
+                                transition duration-200"
+                        />
+                    </div>
+
+                    <!-- Campo: Descripcion -->
+                    <div class="flex flex-col gap-1">
+                        <label class="text-sm font-medium text-gray-700">Descripcion</label>
+                        <textarea
+                            id="input-descripcion"
+                            rows="3"
+                            placeholder="Descripcion breve del producto..."
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
+                                focus:outline-none focus:ring-2 focus:ring-verde-claro focus:border-transparent
+                                transition duration-200 resize-none"
+                        ></textarea>
+                    </div>
+
+                    <!-- Campo: Precio -->
+                    <div class="flex flex-col gap-1">
+                        <label class="text-sm font-medium text-gray-700">Precio</label>
+                        <input
+                            id="input-precio"
+                            type="number"
+                            placeholder="Ej. 18.50"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
+                                focus:outline-none focus:ring-2 focus:ring-verde-claro focus:border-transparent
+                                transition duration-200"
+                        />
+                    </div>
+
+                    <!-- Campo: Imagen -->
+                    <div class="flex flex-col gap-1">
+                        <label class="text-sm font-medium text-gray-700">Imagen del producto</label>
+                        <input
+                            id="input-imagen"
+                            type="file"
+                            accept="image/*"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
+                                focus:outline-none focus:ring-2 focus:ring-verde-claro focus:border-transparent
+                                transition duration-200"
+                        />
+                        <!-- Vista previa de la imagen seleccionada -->
+                        <img id="preview-imagen" src="" alt="Vista previa"
+                            class="hidden mt-2 w-24 h-24 object-cover rounded-xl border border-gray-200"/>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="flex gap-3 pt-2">
+                        <button
+                            onclick="guardarProducto()"
+                            class="bg-verde-oscuro hover:bg-verde-medio text-white px-6 py-3 rounded-xl font-semibold transition duration-200 text-sm">
+                            Guardar Producto
+                        </button>
+                        <button
+                            onclick="cancelarFormulario()"
+                            class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-6 py-3 rounded-xl font-semibold transition duration-200 text-sm">
+                            Cancelar
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="adminProductos.js"></script>
+
+</body>
+</html>
