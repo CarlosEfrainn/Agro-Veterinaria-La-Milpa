@@ -49,12 +49,12 @@
 
     </div>
 
-    <div class="space-y-5">
+    <form id="login-form" class="space-y-5">
 
     <div class="flex flex-col gap-1">
       <label class="text-sm font-medium text-gray-700">Usuario</label>
 
-      <input type="text" placeholder="Ingresa tu usuario" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
+      <input id="input-usuario" type="text" placeholder="Ingresa tu usuario" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
       text-gray-800 placeholder-gray-300
       focus:outline-none focus:ring-2 focus:ring-verde-claro focus:border-transparent
       transition duration-200"
@@ -65,18 +65,20 @@
 
       <label class="text-sm font-medium text-gray-700">Contraseña</label>
 
-      <input type="password" placeholder="Ingresa tu contraseña"class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
+      <input id="input-contrasena" type="password" placeholder="Ingresa tu contraseña" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm
       text-gray-800 placeholder-gray-300
       focus:outline-none focus:ring-2 focus:ring-verde-claro focus:border-transparent
       transition duration-200"
       />
     </div>
 
-    <button class="w-full bg-verde-oscuro hover:bg-verde-medio text-white font-semibold py-3 rounded-xl transition duration-200 mt-2">Ingresar al Panel</button>
-    </div>
+    <button id="btn-ingresar" type="submit" class="w-full bg-verde-oscuro hover:bg-verde-medio text-white font-semibold py-3 rounded-xl transition duration-200 mt-2">Ingresar al Panel</button>
+    </form>
     <p class="text-center text-gray-400 text-xs mt-6">
     🔒 Acceso restringido solo para administradores
     </p>
 </div>
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

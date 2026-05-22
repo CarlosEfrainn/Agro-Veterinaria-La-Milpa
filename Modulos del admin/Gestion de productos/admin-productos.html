@@ -48,7 +48,7 @@
             <span class="text-gray-300 text-sm hidden sm:block">
                 Hola, Admin
             </span>
-            <a href="../Login/admin-login.html" class="bg-white text-verde-oscuro text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition duration-200">
+            <a href="../Login/admin-login.html" onclick="logoutAdmin(); return false;" class="bg-white text-verde-oscuro text-xs font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition duration-200">
                 Cerrar Sesión
             </a>
         </div>
@@ -215,6 +215,7 @@
         </main>
     </div>
 
+    <script src="../Login/auth.js"></script>
     <script src="adminProductos.js"></script>
 
 </body>
