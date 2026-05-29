@@ -73,7 +73,6 @@
   </div>
 
 
-  <!-- ── HERO ─────────────────────────────────────────── -->
   <section class="hero-bg text-white pt-32 pb-24 px-6 text-center">
     <p class="text-verde-claro text-xs uppercase tracking-widest mb-3 font-semibold">Bienvenido a</p>
     <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
@@ -108,15 +107,13 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center fade-up">
 
-        <!-- Panel visual con iconos de Efraín -->
         <div class="bg-verde-oscuro rounded-2xl p-8 text-center shadow-md">
-          <img src="../../Iconos/gestionDeInfo.png" alt="Nosotros"
+          <img src="../../Iconos/QuienesSomos.png" alt="Nosotros"
               class="w-14 h-14 mx-auto mb-4 opacity-90"/>
           <p class="text-verde-claro text-xs uppercase tracking-widest font-semibold mb-2">Quiénes somos</p>
           <p class="text-white text-lg font-bold leading-snug mb-6">
             Agro Veterinaria<br/>La Milpa Santa Elena
           </p>
-          <!-- Chips de servicios con iconos reales -->
           <div class="flex flex-col gap-2 text-left">
             <div class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-2">
               <img src="../../Iconos/producto-organico.png" class="w-5 h-5"/>
@@ -146,22 +143,6 @@
             Ofrecemos atención personalizada, productos de calidad y servicio a domicilio
             para el campo y tus animales.
           </p>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 mb-3">
-            <img src="../../Iconos/solicitudPendiente.png" class="w-5 h-5 opacity-70"/>
-            <div>
-              <p class="text-xs text-gray-400 font-medium">Teléfono</p>
-              <p id="telefonoNegocio" class="text-verde-oscuro font-bold text-sm">0000-0000</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
-            <img src="../../Iconos/Dashboard.png" class="w-5 h-5 opacity-70"/>
-            <div>
-              <p class="text-xs text-gray-400 font-medium">Horario</p>
-              <p id="horarioNegocio" class="text-verde-oscuro font-bold text-sm">Lunes – Sábado, 8:00 AM – 5:00 PM</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -178,17 +159,14 @@
         Catálogo actualizado por el administrador
       </p>
 
-      <!-- Grid llenado por JS -->
       <div id="gridProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
 
-      <!-- Estado vacío -->
       <div id="sinProductos" class="hidden text-center py-16 fade-up">
         <img src="../../Iconos/producto-organico.png" class="w-12 h-12 mx-auto mb-4 opacity-30"/>
         <p class="text-gray-400 text-sm font-medium">Aún no hay productos en el catálogo.</p>
         <p class="text-gray-300 text-xs mt-1">El administrador los agregará pronto.</p>
       </div>
 
-      <!-- Ver más -->
       <div id="verMasBtn" class="hidden text-center mt-10 fade-up">
         <a href="../Catalogo/catalogo.html"
           class="inline-flex items-center gap-2 border border-verde-claro text-verde-oscuro
@@ -199,7 +177,6 @@
       </div>
     </div>
   </section>
-
 
   <section class="bg-verde-oscuro text-white py-16 px-6">
     <div class="max-w-5xl mx-auto">
@@ -220,7 +197,7 @@
 
         <div class="rounded-2xl p-6 border border-white/10 bg-white/10 text-center">
           <img src="../../Iconos/enviado.png" class="w-8 h-8 mx-auto mb-3 opacity-90"/>
-          <p class="text-verde-claro text-2xl font-bold mb-1">🚚</p>
+          <p class="text-verde-claro text-2xl font-bold mb-1">Domicilio</p>
           <p class="text-sm text-gray-300">Servicio a domicilio en Santa Elena</p>
         </div>
 
@@ -240,27 +217,30 @@
 
         <div class="flex flex-col gap-4">
 
-          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 flex items-center gap-4 hover:border-verde-claro transition">
-            <img src="../../Iconos/solicitudPendiente.png" class="w-8 h-8 flex-shrink-0"/>
-            <div>
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 flex items-start gap-4 hover:border-verde-claro transition">
+            <img src="../../Iconos/Telefono.png" class="w-8 h-8 flex-shrink-0 mt-1"/>
+            <div class="flex-1">
               <p class="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-0.5">Teléfonos</p>
-              <p id="telContacto" class="text-verde-oscuro font-bold text-sm">0000-0000</p>
+              <div id="telefonosContacto" class="space-y-1">
+                <p class="text-verde-oscuro font-bold text-sm">2611-1504</p>
+                <p class="text-verde-oscuro font-bold text-sm">6305-1374</p>
+              </div>
             </div>
           </div>
 
           <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 flex items-center gap-4 hover:border-verde-claro transition">
-            <img src="../../Iconos/gestionDeInfo.png" class="w-8 h-8 flex-shrink-0"/>
+            <img src="../../Iconos/Ubicacion.png" class="w-8 h-8 flex-shrink-0"/>
             <div>
               <p class="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-0.5">Ubicación</p>
-              <p class="text-verde-oscuro font-bold text-sm">Santa Elena, El Salvador</p>
+              <p id="ubicacionContacto" class="text-verde-oscuro font-bold text-sm">Santa Elena, El Salvador</p>
             </div>
           </div>
 
           <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 flex items-center gap-4 hover:border-verde-claro transition">
-            <img src="../../Iconos/Dashboard.png" class="w-8 h-8 flex-shrink-0"/>
+            <img src="../../Iconos/Horario.png" class="w-8 h-8 flex-shrink-0"/>
             <div>
               <p class="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-0.5">Horario</p>
-              <p id="horarioContacto" class="text-verde-oscuro font-bold text-sm">Lunes – Sábado, 8:00 AM – 5:00 PM</p>
+              <p id="horarioContacto" class="text-verde-oscuro font-bold text-sm">8:00 AM – 4:00 PM</p>
             </div>
           </div>
 
@@ -279,7 +259,7 @@
 
         <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
           <div class="bg-verde-oscuro px-4 py-3 flex items-center gap-2">
-            <img src="../../Iconos/solicitud.png" class="w-4 h-4 opacity-80"/>
+            <img src="../../Iconos/Ubicacion.png" class="w-4 h-4 opacity-80"/>
             <span class="text-white text-xs font-semibold">Nuestra ubicación</span>
           </div>
           <iframe
@@ -293,7 +273,7 @@
             title="Ubicación Agro Veterinaria La Milpa">
           </iframe>
           <div class="px-4 py-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
-            <p class="text-xs text-gray-500">📍 Carretera Jucuapa, Santa Elena</p>
+            <p id="ubicacionMapa" class="text-xs text-gray-500">📍 Carretera Jucuapa, Santa Elena</p>
             <a href="https://maps.app.goo.gl/kucK1eE83mqUUt6WA"
               target="_blank"
               class="text-xs text-verde-claro font-semibold hover:underline">
@@ -336,17 +316,62 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    const info = JSON.parse(localStorage.getItem('milpa_info') || '{}');
-    if (info.nombre)      document.getElementById('nombreNegocio').textContent    = info.nombre;
-    if (info.descripcion) document.getElementById('descripcionNegocio').textContent = info.descripcion;
-    if (info.telefono) {
-      document.getElementById('telefonoNegocio').textContent = info.telefono;
-      document.getElementById('telContacto').textContent     = info.telefono;
+    function cargarInfoNegocio() {
+      const info = JSON.parse(localStorage.getItem('milpa_info') || '{}');
+      if (info.nombre)      document.getElementById('nombreNegocio').textContent    = info.nombre;
+      if (info.descripcion) document.getElementById('descripcionNegocio').textContent = info.descripcion;
+      
+      const telefonos = JSON.parse(localStorage.getItem('milpa_telefonos') || '[]');
+      
+      if (telefonos.length > 0) {
+        document.getElementById('telefonoNegocio').textContent = telefonos[0];
+      } else if (info.telefono) {
+        document.getElementById('telefonoNegocio').textContent = info.telefono;
+      }
+      
+      const telefonosContacto = document.getElementById('telefonosContacto');
+      if (telefonos.length > 0) {
+        telefonosContacto.innerHTML = '';
+        telefonos.forEach(tel => {
+          const p = document.createElement('p');
+          p.className = 'text-verde-oscuro font-bold text-sm';
+          p.textContent = tel;
+          telefonosContacto.appendChild(p);
+        });
+      } else if (info.telefono) {
+        telefonosContacto.innerHTML = `<p class="text-verde-oscuro font-bold text-sm">${info.telefono}</p>`;
+      }
+      
+      if (info.horario) {
+        document.getElementById('horarioNegocio').textContent  = info.horario;
+        document.getElementById('horarioContacto').textContent = info.horario;
+      }
+      if (info.ubicacion) {
+        document.getElementById('ubicacionMapa').textContent = '📍 ' + info.ubicacion;
+        document.getElementById('ubicacionContacto').textContent = info.ubicacion;
+      }
+      if (info.latitud && info.longitud) {
+        const iframeElement = document.querySelector('iframe[title="Ubicación Agro Veterinaria La Milpa"]');
+        if (iframeElement) {
+          iframeElement.src = `https://www.google.com/maps?q=${info.latitud},${info.longitud}&hl=es&z=17&output=embed`;
+        }
+      }
     }
-    if (info.horario) {
-      document.getElementById('horarioNegocio').textContent  = info.horario;
-      document.getElementById('horarioContacto').textContent = info.horario;
-    }
+    cargarInfoNegocio();
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'milpa_info' || e.key === 'milpa_telefonos') {
+        cargarInfoNegocio();
+      }
+    });
+
+    window.addEventListener('milpa_info_actualizada', (e) => {
+      cargarInfoNegocio();
+    });
+
+    window.addEventListener('milpa_telefonos_actualizado', (e) => {
+      cargarInfoNegocio();
+    });
 
     const productos    = JSON.parse(localStorage.getItem('milpa_productos') || '[]');
     const grid         = document.getElementById('gridProductos');
